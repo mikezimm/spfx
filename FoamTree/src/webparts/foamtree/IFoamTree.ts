@@ -32,7 +32,7 @@ export interface IFoamTree {
     layoutByWeightOrder?: boolean;  // VERIFIED!  https://get.carrotsearch.com/foamtree/demo/api/index.html#layoutByWeightOrder
 
     // Show the relaxation
-    relaxationVisible?: boolean, //VERIFIED!   https://get.carrotsearch.com/foamtree/demo/api/index.html#relaxationVisible
+    relaxationVisible?: boolean; //VERIFIED!   https://get.carrotsearch.com/foamtree/demo/api/index.html#relaxationVisible
 
     // Make the relaxation last longer
     relaxationQualityThreshold?: number;  //0,  VERIFIED!    https://get.carrotsearch.com/foamtree/demo/api/index.html#relaxationQualityThreshold
@@ -42,11 +42,9 @@ export interface IFoamTree {
 
     
     // For faster rendering
-    groupFillType?: string;  //"plain"
+    groupFillType?: IFoamTreeFillType;  //"plain"
 
 
-
-    
     maxGroupLevelsDrawn?: number;  //Start with drawing just the top-level groups   https://get.carrotsearch.com/foamtree/demo/api/index.html#maxGroupLevelsDrawn
     maxGroupLabelLevelsDrawn?: number;  //Start with drawing just the top-level groups   https://get.carrotsearch.com/foamtree/demo/api/index.html#maxGroupLabelLevelsDrawn
 

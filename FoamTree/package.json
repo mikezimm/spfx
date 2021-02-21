@@ -17,7 +17,10 @@
     "@microsoft/sp-lodash-subset": "1.11.0",
     "@microsoft/sp-office-ui-fabric-core": "1.11.0",
     "@microsoft/sp-property-pane": "1.11.0",
-    "@microsoft/sp-webpart-base": "1.11.0"
+    "@microsoft/sp-webpart-base": "1.11.0",
+    "@mikezimm/npmfunctions": "0.0.17",
+    "@pnp/sp": "^2.2.0",
+    "@pnp/spfx-property-controls": "^2.3.0"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "1.11.0",
