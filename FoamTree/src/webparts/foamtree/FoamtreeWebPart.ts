@@ -10,6 +10,8 @@ import styles from "./FoamtreeWebPart.module.scss";
 import * as strings from "FoamtreeWebPartStrings";
 import { FoamTree } from "@carrotsearch/foamtree";
 
+import { IFoamTree } from './IFoamTree';
+
 export interface IFoamtreeWebPartProps {
   description: string;
 }
@@ -50,8 +52,11 @@ export default class FoamtreeWebPart extends BaseClientSideWebPart<IFoamtreeWebP
       },
     });
 
-    foamtree.set({
+    let thisFoamTree : IFoamTree = {
       fadeDuration: 1500,
+      layoutByWeightOrder: false,
+      stacking: 'hierarchical',
+      layout: 'ordered',
       dataObject: {
         groups: (function() {
           var arr = [];
@@ -59,7 +64,7 @@ export default class FoamtreeWebPart extends BaseClientSideWebPart<IFoamtreeWebP
             arr.push({
               label: "a",
               weight: Math.pow(Math.random(), 5) +
-                      (Math.random() < 0.1 ? Math.random() * 2 : 0)
+                      (Math.random() < 0.1 ? Math.random() * 2 : 0),
             });
           }
           return arr;
@@ -72,10 +77,17 @@ export default class FoamtreeWebPart extends BaseClientSideWebPart<IFoamtreeWebP
       // Make the relaxation last longer
       relaxationQualityThreshold: 0,
       relaxationMaxDuration: 15000,
+
+      groupSelectionOutlineShadowSize: 50,
     
       // For faster rendering
-      groupFillType: "plain"
-    });
+      groupFillType: "plain",
+      groupLabelMinFontSize: 20,
+
+      //rolloutStartPoint: 'bottomright',
+    };
+
+    foamtree.set(thisFoamTree);
     
   }
 
